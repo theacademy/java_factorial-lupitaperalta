@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-
 public class Factorial {
 	
 	 private Scanner scanner;
@@ -34,12 +33,18 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
+		int temp = Integer.parseInt(scanner.nextLine());
+		if (1 <= temp && temp <= 10){
+			num = temp;
+			return num;
+		}
+		else {
+			this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
+			return -1;
+		}
+		//YOUR CODE ENDS HERE	
 
-		return -1;
 
-		//YOUR CODE ENDS HERE
-		 
-			
 	 }
 	
 	 
@@ -53,9 +58,9 @@ public class Factorial {
 		 
 		int result = 1;
 		//YOUR CODE STARTS HERE
-
- 
-
+		for (int i = 1; i <= num; i++){
+			result *= i;
+		}
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
 		
@@ -66,11 +71,10 @@ public class Factorial {
 		 Do not change this method.
 		 */
 		 	
-		 int input = this.isInputNumberValid();
-		 if(input != -1)
-		 {
+		int input = this.isInputNumberValid();
+		if(input != -1){
 			 calculateFactorial(input);
-		 }
+		}
 		 
 	 }
 	
